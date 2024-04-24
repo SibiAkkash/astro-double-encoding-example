@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "Jersey";
+  src: url("assets/Inter-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: auto;
+}
+
+h1 {
+  font-family: "Jersey";
+}
+
+.background-img {
+  background: url("assets/astro-logo-dark.svg") no-repeat top left;
+  height: 100%;
+}
+
+.inner {
+  width: 200px;
+  height: 180px;
+}
+
+section {
+  outline: 2px solid lightcoral;
+  max-width: 500px;
+}

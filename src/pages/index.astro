@@ -1,0 +1,57 @@
+---
+import "../styles.css";
+
+import astroLogo from "../assets/astro-logo-dark.svg";
+import interMedium from "../assets/Inter-Medium.ttf";
+
+console.log("\nPath to image combined with base - ", astroLogo.src);
+console.log("Path to font combined with base - ", interMedium);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Double encoding</title>
+  </head>
+  <body>
+    <main>
+      <h1>This heading should use the Inter Medium font</h1>
+      <p><i>Its not, since the font url got double encoded</i></p>
+      <br />
+      <h3>An image imported in the file</h3>
+      <p>This image loads correctly</p>
+      <section><img src={astroLogo.src} /></section>
+      <br />
+
+      <h3>An image set as background image via <code>css url()</code></h3>
+      <p>
+        <i>
+          The image below doesn't load as the image path
+          <code>css url()</code>
+          gets double encoded
+        </i>
+      </p>
+      <section class="background-img">
+        <div class="inner"></div>
+      </section>
+
+      <br />
+      <br />
+
+      <div>
+        <span>
+          <strong>Path to image imported in the file - </strong>
+          <code>{astroLogo.src}</code>
+        </span>
+      </div>
+      <div>
+        <span>
+          <strong>Path to font in the <code>css url()</code> - </strong>
+          <code>{interMedium}</code>
+        </span>
+      </div>
+    </main>
+  </body>
+</html>
